@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>unknown</pubdate>
+                <title>City_Boundaries</title>
+                <othercit>time period: 2021</othercit>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>The city boundaries are updated on a quarterly basis using annexation information from OFM (https://ofm.wa.gov/washington-data-research/annexations-and-municipal-boundary-changes). VISION 2050 regional geography classifications were added to the dataset in 2020.</abstract>
+            <supplinf/>
+        </descript>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey/>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst/>
+        <datacred>Puget Sound Regional Council</datacred>
+    </idinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>city_name</enttypl>
+                <enttypd>Name of city</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>cnty_name</enttypl>
+                <enttypd>Name of county</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>city_fips</enttypl>
+                <enttypd>Federal Information Processing Standard Publication ID for city</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>cnty_fips</enttypl>
+                <enttypd>Federal Information Processing Standard Publication ID for county</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>feat_type</enttypl>
+                <enttypd>Geography type assigned by PSRC</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>rgeo_class</enttypl>
+                <enttypd>VISION 2050 regional geography ID</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>class_desc</enttypl>
+                <enttypd>VISION 2050 regional geography description</enttypd>
+            </enttyp>
+        </detailed>
+        <detailed>
+            <enttyp>
+                <enttypl>acres_gis</enttypl>
+                <enttypd>Acreage</enttypd>
+            </enttyp>
+        </detailed>
+    </eainfo>
+    <metainfo>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Puget Sound Regional Council</cntorg>
+                    <cntper>Drew Hanson</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>unknown</addrtype>
+                    <city>Seattle</city>
+                    <postal>98104</postal>
+                </cntaddr>
+                <cntvoice>206-971-3269 </cntvoice>
+                <cntemail>DHanson@psrc.org</cntemail>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>

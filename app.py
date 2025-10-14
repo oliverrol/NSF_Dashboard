@@ -174,3 +174,11 @@ with ui.layout_columns(col_widths=(8, 4)):
 
 # Reactive value to track if the initial centering has happened
 reactive.get_user_location = reactive.Value(False)
+
+with ui.card():
+    @render.data_frame
+    def code():
+        return render.DataGrid(
+            pantries,
+            # height='150px'
+        )

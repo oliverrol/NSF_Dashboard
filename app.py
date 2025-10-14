@@ -1,3 +1,4 @@
+import time
 from shiny import reactive
 from shiny.express import render, ui, input
 from shinywidgets import render_widget
@@ -77,6 +78,7 @@ with ui.layout_columns(col_widths=(8, 4)):
         global map_widget
         m = L.Map(zoom=11, center=(47.60, -122.30))
 
+        time.sleep(1)
         for _, row in pantries.iterrows():
             lat, lon = row['LAT'], row['LON']
             if pd.notna(lat) and pd.notna(lon):
@@ -175,10 +177,10 @@ with ui.layout_columns(col_widths=(8, 4)):
 # Reactive value to track if the initial centering has happened
 reactive.get_user_location = reactive.Value(False)
 
-with ui.card():
-    @render.data_frame
-    def code():
-        return render.DataGrid(
-            pantries,
-            # height='150px'
-        )
+# with ui.card():
+#     @render.data_frame
+#     def code():
+#         return render.DataGrid(
+#             pantries,
+#             # height='150px'
+#         )

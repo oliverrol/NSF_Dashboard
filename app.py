@@ -1,4 +1,5 @@
 import time
+
 from shiny import reactive
 from shiny.express import render, ui, input
 from shinywidgets import render_widget
@@ -14,8 +15,6 @@ clicked_marker_id = reactive.Value(0)
 
 ui.page_opts(title="Pantry Maps", fillable=True)
 
-# 1. Add a hidden input to store the location from JavaScript
-ui.input_text("current_location", value="", label=None, width="0px")
 
 # 2. Add JavaScript to fetch the location and update the input
 # The JS will run as soon as the map loads.
@@ -78,7 +77,7 @@ with ui.layout_columns(col_widths=(8, 4)):
         global map_widget
         m = L.Map(zoom=11, center=(47.60, -122.30))
 
-        time.sleep(1)
+        time.sleep(3)
         for _, row in pantries.iterrows():
             lat, lon = row['LAT'], row['LON']
             if pd.notna(lat) and pd.notna(lon):
@@ -99,7 +98,21 @@ with ui.layout_columns(col_widths=(8, 4)):
                 m.add(marker)
 
         # Add the user marker to the map, initially at (0,0)
-        m.add_layer(user_marker)
+        m.add(user_marker)
+        # 4. Add the legend to the map
+        m.add(
+            L.LegendControl(
+                title="Pantry Status",
+                legend={
+                    "Unknown": 'gray', "Validated":"green", "Doesn't Exist":"red"
+                },
+                position="topright",
+                # Style the legend to look cleaner
+                max_height="200px",
+                overflow_y="auto"
+            )
+        )
+
         map_widget = m
         return m
 
@@ -174,13 +187,9 @@ with ui.layout_columns(col_widths=(8, 4)):
                     id='val_pantry'  # Optional ID
                 )
 
+
+            # 1. Add a hidden input to store the location from JavaScript
+            ui.input_text("current_location", value="", label=None, width="0px")
+
 # Reactive value to track if the initial centering has happened
 reactive.get_user_location = reactive.Value(False)
-
-# with ui.card():
-#     @render.data_frame
-#     def code():
-#         return render.DataGrid(
-#             pantries,
-#             # height='150px'
-#         )
